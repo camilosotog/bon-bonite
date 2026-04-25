@@ -12,10 +12,15 @@
     "test:webkit": "playwright test --project=webkit",
     "codegen": "playwright codegen"
   },
-  "keywords": ["playwright", "testing", "e2e"],
+  "keywords": [
+    "playwright",
+    "testing",
+    "e2e"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.45.0"
+    "@playwright/test": "^1.45.0",
+    "@types/node": "^25.6.0"
   }
 }
