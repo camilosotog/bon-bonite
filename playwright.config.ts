@@ -26,10 +26,18 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://www.bon-bonite.com/',
 
+    /* Tiempo máximo para encontrar y accionar sobre un elemento */
+    actionTimeout: 15000,
+
+
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
 
+  timeout: 60_000, // 60 segundos por test
+  expect: {
+    timeout: 10_000, // timeout para los expects/assertions
+  },
   /* Configure projects for major browsers */
   projects: [
     {

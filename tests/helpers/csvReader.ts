@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { IUser } from '../interfaces/IUser';
+import { ICheckout } from '../interfaces/ICheckout';
 
 export function readUsersFromCsv(filePath: string): IUser[] {
   const absolutePath = path.resolve(filePath);
@@ -11,7 +12,20 @@ export function readUsersFromCsv(filePath: string): IUser[] {
   const [_header, ...rows] = lines;
 
   return rows.map(row => {
-    const [cedula, firstName, lastName, email, password] = row.split(',');
-    return { cedula, firstName, lastName, email, password };
+    const [cedula, firstName, lastName, email, password, phone] = row.split(',');
+    return { cedula, firstName, lastName, email, password, phone };
+  });
+}
+
+export function readCheckoutFromCsv(filePath: string): ICheckout[] {
+  const absolutePath = path.resolve(filePath);
+  const content = fs.readFileSync(absolutePath, 'utf-8');
+  const lines = content.split('\n').map(l => l.trim()).filter(Boolean);
+
+  const [_header, ...rows] = lines;
+
+  return rows.map(row => {
+    const [department, city, address, phone] = row.split(',');
+    return { department, city, address, phone };
   });
 }

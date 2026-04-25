@@ -1,6 +1,6 @@
-cedula,firstName,lastName,email,password
-1023456789,Valentina,García,valentina.garcia.test@mailtest.com,Test@1234!
-1098765432,Santiago,Rodríguez,santiago.rodriguez.test@mailtest.com,Pass#5678A
-1034567890,Camila,Martínez,camila.martinez.test@mailtest.com,Secure!9Abc
-1076543210,Sebastián,López,sebastian.lopez.test@mailtest.com,MyP@ss12Xz
-1056789012,Isabella,González,isabella.gonzalez.test@mailtest.com,Abcd@5678!
+cedula,firstName,lastName,email,password,phone
+1023456789,Valentina,García,valentina.garcia.test@mailtest.com,Test@1234!,3001234567
+1098765432,Santiago,Rodríguez,santiago.rodriguez.test@mailtest.com,Pass#5678A,3109876543
+1034567890,Camila,Martínez,camila.martinez.test@mailtest.com,Secure!9Abc,3201234567
+1076543210,Sebastián,López,sebastian.lopez.test@mailtest.com,MyP@ss12Xz,3156789012
+1056789012,Isabella,González,isabella.gonzalez.test@mailtest.com,Abcd@5678!,3004567890
