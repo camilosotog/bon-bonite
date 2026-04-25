@@ -1,0 +1,21 @@
+{
+  "name": "bon-bonite",
+  "version": "1.0.0",
+  "description": "Proyecto de testing con Playwright",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:headed": "playwright test --headed",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "codegen": "playwright codegen"
+  },
+  "keywords": ["playwright", "testing", "e2e"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.45.0"
+  }
+}
