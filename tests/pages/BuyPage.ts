@@ -5,7 +5,11 @@ export class BuyPage {
   readonly page: Page;
 
   private readonly accesoriosLink: Locator;
+  private readonly bolsosLink: Locator;
   private readonly firstProduct: Locator;
+  private readonly secondProduct: Locator;
+  private readonly addToCartBtn: Locator;
+  private readonly cartCounter: Locator;
   private readonly buyNowLink: Locator;
   private readonly checkoutLink: Locator;
   private readonly continueBtn: Locator;
@@ -20,7 +24,11 @@ export class BuyPage {
   constructor(page: Page) {
     this.page = page;
     this.accesoriosLink = page.locator('#menu-item-7').getByRole('link', { name: 'Accesorios' });
+    this.bolsosLink = page.locator('#menu-item-8').getByRole('link', { name: 'Bolsos' });
     this.firstProduct = page.locator('.bg-bb-product-gray > .relative').first();
+    this.secondProduct = page.locator('div:nth-child(2) > .bg-bb-product-gray > .relative');
+    this.addToCartBtn = page.getByRole('button', { name: 'Añadir al carrito' });
+    this.cartCounter = page.getByRole('link', { name: '1', exact: true });
     this.buyNowLink = page.getByRole('link', { name: 'Comprar Ahora' });
     this.checkoutLink = page.getByRole('link', { name: 'Finalizar compra' });
     this.continueBtn = page.getByRole('button', { name: 'Continuar' });
@@ -35,6 +43,25 @@ export class BuyPage {
 
   async goToAccessories() {
     await this.accesoriosLink.click();
+  }
+
+  async goToBolsos() {
+    await this.bolsosLink.click();
+  }
+
+  async selectSecondProduct() {
+    await this.secondProduct.click();
+  }
+
+  async addToCart() {
+    await this.addToCartBtn.click();
+  }
+
+  async assertCartCounterUpdated() {
+    await expect(
+      this.cartCounter,
+      'No se actualizó el contador del carrito'
+    ).toBeVisible();
   }
 
   async selectFirstProduct() {

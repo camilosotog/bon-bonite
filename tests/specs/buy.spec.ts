@@ -31,4 +31,14 @@ test.describe('Flujo completo de compra de producto (E2E)', () => {
       await buyPage.assertOrderSuccess();
   })
 
+  test('Agregar producto al carrito sin iniciar sesión', async ({ page }) => {
+    const buyPage = new BuyPage(page);
+
+    await page.goto('/');
+    await buyPage.goToBolsos();
+    await buyPage.selectSecondProduct();
+    await buyPage.addToCart();
+    await buyPage.assertCartCounterUpdated();
+  })
 })
+
