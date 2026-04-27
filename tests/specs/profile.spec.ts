@@ -14,12 +14,10 @@ test.describe('Modificar datos del perfil de usuario', () => {
       const loginPage = new LoginPage(page);
       const profilePage = new ProfilePage(page);
       const newFirstName = randomFirstName();
-
       await loginPage.navigate();
       await loginPage.login({ cedula: user.cedula, password: user.password });
       await profilePage.updateFirstName(newFirstName);
       await profilePage.assertFirstNameUpdated(newFirstName);
     });
   }
-
 });
